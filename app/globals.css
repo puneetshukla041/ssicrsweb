@@ -1,0 +1,64 @@
+/* 1️⃣ Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap'); /* ✅ DM Serif */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* 2️⃣ Tailwind CSS layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3️⃣ Root variables */
+:root {
+  --background: #FBFAF2;
+  --foreground: #171717;
+  --font-sans: 'Lato', Arial, Helvetica, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+  --font-dmserif: 'DM Serif Display', serif; /* ✅ DM Serif variable */
+}
+
+/* 4️⃣ Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* 5️⃣ Global body */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* 6️⃣ Hover underline animation */
+.hover-underline {
+  position: relative;
+  cursor: pointer;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* 7️⃣ Cursor pointer on all buttons and links */
+button, a {
+  cursor: pointer;
+}
+
+/* 8️⃣ DM Serif utility class */
+.font-dmserif {
+  font-family: var(--font-dmserif);
+}
